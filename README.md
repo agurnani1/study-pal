@@ -19,6 +19,7 @@ Quiz Me page —  Paste your notes, or just write the topic, click Generate Quiz
 
 To run the project 
 - clone the repo
+- add 
 - run command in terminal
 streamlit run project.py
 
