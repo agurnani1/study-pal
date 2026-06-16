@@ -143,7 +143,50 @@ def render_quiz(quiz):
             status = "✅ Correct" if user == correct else "❌ Incorrect"
             st.write(f"**{index}.** {status} — correct answer: {correct}. {item['choices'].get(correct, '')}")
 
+#-------------------------------
+#Prompt user to input their own Google API key
+#-------------------------------
+import streamlit as st
+from google import genai
 
+# 1. Sidebar interface for the API key
+with st.sidebar:
+    st.title("🔑 Authentication")
+    user_key = st.text_input(
+        "Enter your Gemini API Key", 
+        type="password",
+        placeholder="AIzaSy..."
+    )
+    
+    # Visual reassurance for the user
+    if user_key:
+        st.info("💡 Your key is held temporarily in session memory. Simply refresh the page to completely remove it.")
+    else:
+        st.caption("If you leave this blank, the app will attempt to use the developer's default key.")
+
+# 2. Key Resolution Logic
+api_key = None
+
+if user_key:
+    # Use the key the user just typed
+    api_key = user_key
+elif "GEMINI_API_KEY" in st.secrets and st.secrets["GEMINI_API_KEY"]:
+    # Fall back to your secret manager key if it exists
+    api_key = st.secrets["GEMINI_API_KEY"]
+
+# 3. Initialize the modern Google GenAI client
+if api_key:
+    try:
+        client = genai.Client(api_key=api_key)
+    except Exception as e:
+        st.error(f"Failed to initialize client: {e}")
+else:
+    st.warning("⚠️ Please enter a valid Gemini API key in the sidebar to begin.")
+    st.stop() # Stops the rest of the app from running and crashing
+
+#-------------------------------
+# Main Logic
+#-------------------------------
 def main():
     st.set_page_config(page_title="AI Study Buddy",
                        page_icon="🤖", layout="wide")
