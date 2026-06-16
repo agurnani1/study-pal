@@ -144,18 +144,15 @@ def render_quiz(quiz):
             st.write(f"**{index}.** {status} — correct answer: {correct}. {item['choices'].get(correct, '')}")
 
 #-------------------------------
-#Prompt user to input their own Google API key
+# Google Gemini API key Prompt
 #-------------------------------
-import streamlit as st
-from google import genai
-
 # 1. Sidebar interface for the API key
 with st.sidebar:
     st.title("🔑 Authentication")
     user_key = st.text_input(
         "Enter your Gemini API Key", 
         type="password",
-        placeholder="AIzaSy..."
+        placeholder="AIya6u..."
     )
     
     # Visual reassurance for the user
