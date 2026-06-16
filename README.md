@@ -1,6 +1,6 @@
 # study-pal
 
-LIVE -https://study-pal.streamlit.app/
+WEBSITE -https://study-pal.streamlit.app/
 
 It’s a Streamlit web app that helps students study smarter using artificial 
 intelligence. You can chat with it, summarize your notes, and even take 
