@@ -19,7 +19,8 @@ Quiz Me page —  Paste your notes, or just write the topic, click Generate Quiz
 
 To run the project 
 - clone the repo
-- add 
+- to the file .streamlit/secrets.toml add the line
+     GEMINI_API_KEY="YOUR GEMINI KEY" #replace "YOUR GEMINI KEY" with your GEMINI API KEY 
 - run command in terminal
 streamlit run project.py
 
