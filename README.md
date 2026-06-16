@@ -1,6 +1,21 @@
 # study-pal
 
-Project was made using the tools 
+It’s a Streamlit web app that helps students study smarter using artificial 
+intelligence. You can chat with it, summarize your notes, and even take 
+automatically generated quizzes — all powered by Google’s Gemini API.”
+
+Overview of Tools & Modules
+Python and Streamlit for the interface. 
+google.genai library to connect to the Gemini API
+Python built-in modules, re & json.
+
+When you run it, the sidebar lets you switch between three pages: 
+The Chat page — where you can ask any study question and get AI-generated explanations. 
+
+The Summarize Notes page — you can upload your notes or a PDF, and 
+it summarizes them neatly using the Gemini model. 
+
+Quiz Me page —  Paste your notes, or just write the topic, click Generate Quiz, and it creates multiple-choice questions automatically. Then, after answering, you get your score instantly.
 
 To run the project 
 - clone the repo
