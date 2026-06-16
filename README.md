@@ -1,5 +1,7 @@
 # study-pal
 
+LIVE -https://study-pal.streamlit.app/
+
 It’s a Streamlit web app that helps students study smarter using artificial 
 intelligence. You can chat with it, summarize your notes, and even take 
 automatically generated quizzes — all powered by Google’s Gemini API.”
